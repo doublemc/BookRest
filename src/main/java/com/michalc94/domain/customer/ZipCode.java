@@ -1,14 +1,46 @@
 package com.michalc94.domain.customer;
 
-import com.google.auto.value.AutoValue;
-
 /**
  * Created by michalc94 on 26.02.17.
  */
-@AutoValue
-abstract class ZipCode {
+class ZipCode {
+  private String zipCode;
 
-  static ZipCode create(String zipCode) {
-    return new AutoValue_ZipCode(zipCode);
+  // jpa requirement
+  public ZipCode() {
+  }
+
+  public ZipCode(String zipCode) {
+    this.zipCode = zipCode;
+  }
+
+  public String getZipCode() {
+    return zipCode;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    ZipCode zipCode1 = (ZipCode) o;
+
+    return zipCode != null ? zipCode.equals(zipCode1.zipCode) : zipCode1.zipCode == null;
+  }
+
+  @Override
+  public int hashCode() {
+    return zipCode != null ? zipCode.hashCode() : 0;
+  }
+
+  @Override
+  public String toString() {
+    return "ZipCode{" +
+        "zipCode='" + zipCode + '\'' +
+        '}';
   }
 }

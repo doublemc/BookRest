@@ -1,0 +1,47 @@
+package com.michalc94.domain.user;
+
+/**
+ * Created by michalc94 on 26.02.17.
+ */
+
+class Password {
+  private String password;
+
+  // jpa requirement
+  public Password() {
+  }
+
+  public Password(String password) {
+    this.password = password;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    Password password1 = (Password) o;
+
+    return password != null ? password.equals(password1.password) : password1.password == null;
+  }
+
+  @Override
+  public int hashCode() {
+    return password != null ? password.hashCode() : 0;
+  }
+
+  @Override
+  public String toString() {
+    return "Password{" +
+        "password='" + password + '\'' +
+        '}';
+  }
+}
