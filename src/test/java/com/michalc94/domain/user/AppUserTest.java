@@ -7,7 +7,7 @@ import org.junit.Test;
 /**
  * Created by michalc94 on 27.02.17.
  */
-public class UserTest {
+public class AppUserTest {
 
   private static final String ANY_EMAIL = "example@example.com";
   private static final String ANY_PASSWORD = "password";
@@ -18,11 +18,11 @@ public class UserTest {
     EmailAddress anyEmail = new EmailAddress(ANY_EMAIL);
     Password anyPassword = new Password(ANY_PASSWORD);
     // when
-    User anyUser = new User(new EmailAddress(ANY_EMAIL), new Password(ANY_PASSWORD));
+    AppUser anyAppUser = new AppUser(new EmailAddress(ANY_EMAIL), new Password(ANY_PASSWORD));
 
     // then
-    assertThat(anyUser.getEmailAddress()).isEqualTo(anyEmail);
-    assertThat(anyUser.getPassword()).isEqualTo(anyPassword);
+    assertThat(anyAppUser.getEmailAddress()).isEqualTo(anyEmail);
+    assertThat(anyAppUser.getPassword()).isEqualTo(anyPassword);
   }
 
   @Test
@@ -31,9 +31,9 @@ public class UserTest {
     EmailAddress anyEmail = new EmailAddress(ANY_EMAIL);
     Password anyPassword = new Password(ANY_PASSWORD);
     // when
-    User anyUser = new User(anyEmail, anyPassword);
+    AppUser anyAppUser = new AppUser(anyEmail, anyPassword);
 
     // then
-    assertThat(anyUser.getUserRole()).isEqualTo(UserRole.USER);
+    assertThat(anyAppUser.getUserRole()).isEqualTo(UserRole.USER);
   }
 }

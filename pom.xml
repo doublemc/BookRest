@@ -64,9 +64,9 @@
     <!-- Database -->
 
     <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>1.4.193</version>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>9.4-1206-jdbc42</version>
     </dependency>
 
     <!-- Misc -->

@@ -16,10 +16,10 @@ import javax.persistence.OneToOne;
  * Created by michalc94 on 25.02.17.
  */
 @Entity
-public class User {
+public class AppUser {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long userId;
 
   @Embedded
@@ -36,10 +36,10 @@ public class User {
   private UserRole userRole;
 
   // jpa requirement
-  public User() {
+  public AppUser() {
   }
 
-  public User(EmailAddress emailAddress, Password password) {
+  public AppUser(EmailAddress emailAddress, Password password) {
     this.emailAddress = emailAddress;
     this.password = password;
     this.userRole = UserRole.USER; // on creation everyone is just a user
@@ -47,6 +47,10 @@ public class User {
 
   public Long getUserId() {
     return userId;
+  }
+
+  public void setUserId(Long userId) {
+    this.userId = userId;
   }
 
   public EmailAddress getEmailAddress() {

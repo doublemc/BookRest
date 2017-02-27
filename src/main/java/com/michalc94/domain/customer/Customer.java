@@ -1,6 +1,6 @@
 package com.michalc94.domain.customer;
 
-import com.michalc94.domain.user.User;
+import com.michalc94.domain.user.AppUser;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embedded;
@@ -20,7 +20,7 @@ import javax.persistence.OneToOne;
 public class Customer {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long customerId;
 
   @Embedded
@@ -36,19 +36,19 @@ public class Customer {
 
   @OneToOne
   @JoinColumn(name = "USER_ID")
-  private User user;
+  private AppUser appUser;
 
   // jpa requirement
   public Customer() {
   }
 
   public Customer(FirstName firstName, LastName lastName,
-      PhoneNumber phoneNumber, Address address, User user) {
+      PhoneNumber phoneNumber, Address address, AppUser appUser) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
     this.address = address;
-    this.user = user;
+    this.appUser = appUser;
   }
 
   public Long getCustomerId() {
@@ -81,8 +81,8 @@ public class Customer {
     this.address = address;
   }
 
-  public User getUser() {
-    return user;
+  public AppUser getAppUser() {
+    return appUser;
   }
 
   @Override
@@ -102,14 +102,14 @@ public class Customer {
     if (lastName != null ? !lastName.equals(customer.lastName) : customer.lastName != null) {
       return false;
     }
-    return user != null ? user.equals(customer.user) : customer.user == null;
+    return appUser != null ? appUser.equals(customer.appUser) : customer.appUser == null;
   }
 
   @Override
   public int hashCode() {
     int result = firstName != null ? firstName.hashCode() : 0;
     result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-    result = 31 * result + (user != null ? user.hashCode() : 0);
+    result = 31 * result + (appUser != null ? appUser.hashCode() : 0);
     return result;
   }
 

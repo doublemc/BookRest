@@ -4,7 +4,7 @@ package com.michalc94.domain.product;
  * Created by michalc94 on 26.02.17.
  */
 
-class Author {
+public class Author {
   private String author;
 
   // jpa requirement
