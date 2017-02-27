@@ -10,13 +10,13 @@ import org.junit.Test;
  */
 public class AddressTest {
 
-  private static final String ANY_STATE = "ANY STATE";
-  private static final String ANY_ZIP_CODE = "ANY ZIP CODE";
-  private static final String ANY_CITY = "ANY CITY";
-  private static final String ANY_STREET = "ANY STREET";
+  private static final String ANY_STATE = "pomorskie";
+  private static final String ANY_ZIP_CODE = "80-870";
+  private static final String ANY_CITY = "Gdansk";
+  private static final String ANY_STREET = "Grunwaldzka 45";
 
   @Test
-  public void shouldConstructValidAddress() {
+  public void shouldCreateAddress_whenUsingConstructor() {
     // given
     State anyState = new State(ANY_STATE);
     ZipCode anyZipCode = new ZipCode(ANY_ZIP_CODE);

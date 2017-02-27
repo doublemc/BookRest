@@ -39,7 +39,7 @@ public class User {
   public User() {
   }
 
-  public User(EmailAddress emailAddress, Password password, UserRole userRole) {
+  public User(EmailAddress emailAddress, Password password) {
     this.emailAddress = emailAddress;
     this.password = password;
     this.userRole = UserRole.USER; // on creation everyone is just a user

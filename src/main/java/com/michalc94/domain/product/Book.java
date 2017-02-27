@@ -1,6 +1,7 @@
 package com.michalc94.domain.product;
 
 import java.math.BigDecimal;
+import java.time.Year;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Embedded;
@@ -28,17 +29,20 @@ public class Book {
   private Author author;
   @Embedded
   private Genre genre;
+  private Year publicationYear;
   private BigDecimal price;
 
   // jpa requirement
   public Book() {
   }
 
-  public Book(Isbn isbn, Title title, Author author, Genre genre, BigDecimal price) {
+  public Book(Isbn isbn, Title title, Author author, Genre genre, Year publicationYear,
+      BigDecimal price) {
     this.isbn = isbn;
     this.title = title;
     this.author = author;
     this.genre = genre;
+    this.publicationYear = publicationYear;
     this.price = price;
   }
 
@@ -64,6 +68,10 @@ public class Book {
 
   public BigDecimal getPrice() {
     return price;
+  }
+
+  public Year getPublicationYear() {
+    return publicationYear;
   }
 
   // setter for price is needed because price of the book can change (discounts and so on)
