@@ -1,6 +1,6 @@
 package com.michalc94.dao;
 
-import com.michalc94.domain.customer.Customer;
+import com.michalc94.domain.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 /**

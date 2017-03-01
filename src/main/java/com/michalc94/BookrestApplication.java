@@ -21,7 +21,8 @@ public class BookrestApplication {
 //		}
 //
 //    public void run(ApplicationArguments args) {
-//			bookRepository.save();
+//			bookRepository.save(new Book(new Isbn("22"), new Title("22"), new Author("ss"), new Genre("ss"),
+//					new PublicationYear("2001"), BigDecimal.ONE));
 //		}
 //	}
 }

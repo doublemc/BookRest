@@ -1,6 +1,6 @@
 package com.michalc94.dao;
 
-import com.michalc94.domain.product.Book;
+import com.michalc94.domain.Book;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 /**
