@@ -14,7 +14,7 @@ import javax.persistence.Table;
  * Created by michalc94 on 25.02.17.
  */
 @Entity
-@Table(name = "book")
+@Table(name = "customer")
 public class Customer {
 
   @Id
